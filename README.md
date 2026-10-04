@@ -82,4 +82,6 @@ DRM-protected content (Netflix, Disney+, paid platforms with encrypted streams) 
 
 MIT
 
+## DISCIPLINE 
 <img width="498" height="374" alt="Discipline-СЖАТОО" src="https://github.com/user-attachments/assets/cf11e542-3d25-4dc9-b4df-f3405a6e109b" />
+
