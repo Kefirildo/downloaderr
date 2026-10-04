@@ -1,44 +1,85 @@
-its downloadrr
-A tiny single-file console menu on top of yt-dlp. Download video or audio from YouTube and thousands of other sites without typing long commands.
-It runs entirely on your machine: no third-party "downloader" website in the middle, no ads, no server-side throttling. Speed is whatever the source site and your connection allow, and you can cap it yourself.
-Features
-Numbered colorful console menu
-Download by link, several links at once, or from a text file (one link per line)
-Video quality up to 2160p, or audio only (mp3, m4a, opus, flac, wav)
-Cookie import from your browser (Firefox by default; Chrome, Edge, Brave and others also supported) or from a `cookies.txt` file
-Automatic age-confirmation cookie for sites that show an "are you 18?" prompt
-Download speed limiter so you don't saturate your home network
-Optional: whole playlists, embedded tags and thumbnails, skip already downloaded items
-English / Russian interface (Settings, option 9)
-One-click install / update of yt-dlp from the menu
-Requirements
-Python 3.9+
-ffmpeg (recommended, needed to merge video and audio streams and to convert audio)
-Windows: `winget install ffmpeg`
-macOS: `brew install ffmpeg`
-Linux: `sudo apt install ffmpeg`
-yt-dlp (the script offers to install it on first run)
-Usage
-Pick an option by typing its number and pressing Enter. Settings are saved to `its_downloadrr_settings.json` next to the script.
-Cookies (for age-gated, private or members-only videos)
-Open the site in your browser, confirm the age prompt, log in if needed.
-Close the browser (required for Chrome/Edge, usually not for Firefox).
-In the menu: 3. Cookies -> 1. Use cookies from browser. Change the browser with option 2.
-Speed limit
-4. Settings -> 10. Speed limit. Values are in megaBYTES per second (`2M` is roughly 16 Mbit/s). Default is `2M`.
-Troubleshooting
-Download fails right away: update yt-dlp (main menu, option 8). Sites change often.
-Age prompt still blocks: use browser cookies (see above).
-Only low quality / no merged file: install ffmpeg.
-Cookies from Chrome/Edge fail on Windows: close the browser completely, or use Firefox / an exported `cookies.txt`.
-Limitations
-DRM-protected content (Netflix, Disney+, paid platforms with encrypted streams) is not supported and this tool does not try to bypass DRM.
-Disclaimer
-For personal use with content you have the right to save. Respect copyright and the terms of the sites you use. You are responsible for how you use this tool. Not affiliated with yt-dlp.
----
-## По-русски ##
-Лёгкая консольная обёртка над yt-dlp: меню с цифрами вместо длинных команд. Работает локально, без сайтов-посредников и рекламы.
-Запуск: ну я думаю очевидно что запускать надо
-Что умеет: скачивание по ссылке или списком, выбор качества и режим «только аудио», импорт куки из браузера (по умолчанию Firefox), автоматическое подтверждение возраста, лимит скорости (по умолчанию 2 МБ/с), смена языка (Настройки, пункт 9), установка и обновление yt-dlp из меню.
-Нужны Python 3.9+ и желательно ffmpeg. Если загрузка не идёт, сначала обнови yt-dlp (пункт 8 главного меню).
-Само собой без обхода DRM
+<div align="center">
+
+# its downloaderr
+
+**Tiny console menu on top of [yt-dlp](https://github.com/yt-dlp/yt-dlp).**
+Video or audio from YouTube and thousands of other sites, no long commands.
+
+![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Powered by](https://img.shields.io/badge/powered%20by-yt--dlp-red)
+
+</div>
+
+```text
+==============================================================
+  ITS DOWNLOADeRR  -  console downloader powered by yt-dlp
+==============================================================
+  yt-dlp : installed    ffmpeg : found
+  Mode: video best
+  Cookies: browser: firefox
+  Speed: 2MB/s
+--------------------------------------------------------------
+  1. Download by link
+  2. Download from a list file
+  3. Cookies (browser / file)
+  4. Settings
+  5. Show available formats for a link
+  8. Install / update yt-dlp
+  0. Exit
+```
+
+## Why
+
+- Runs locally: no sketchy "downloader" sites, no ads, no server-side throttling
+- Cookies from your browser (Firefox by default) for age-gated and private videos
+- Built-in speed limiter, so your home network stays usable
+- Quality up to 2160p or audio only, playlists, EN / RU interface
+
+## Quick start
+
+```bash
+python its_downloadrr.py
+```
+
+You need **Python 3.9+** and, ideally, **ffmpeg** (`winget install ffmpeg` / `brew install ffmpeg` / `sudo apt install ffmpeg`). yt-dlp is installed from the menu on first run.
+
+Then just pick a number and paste a link. That's it.
+
+## Good to know
+
+| I want to... | Menu |
+|---|---|
+| Use my browser cookies (age gate, private videos) | `3` then `1` |
+| Limit download speed (default 2 MB/s) | `4` then `10` |
+| Switch language | `4` then `9` |
+| Fix a download that suddenly broke | `8` (update yt-dlp) |
+
+> Sign in or confirm the age prompt in your browser first, then close the browser (needed for Chrome/Edge, usually not for Firefox).
+
+<details>
+<summary>Troubleshooting</summary>
+
+- **Fails right away:** update yt-dlp (`8`), sites change often.
+- **Age prompt still blocks:** use browser cookies (`3`).
+- **Low quality or no merged file:** install ffmpeg.
+- **Chrome/Edge cookies fail on Windows:** close the browser completely, or use Firefox / an exported `cookies.txt`.
+
+</details>
+
+## Notes
+
+DRM-protected content (Netflix, Disney+, paid platforms with encrypted streams) is not supported and this tool does not try to bypass DRM. For personal use with content you have the right to save; respect copyright and site terms. Not affiliated with yt-dlp.
+
+<details>
+<summary>По-русски</summary>
+
+Лёгкая консольная обёртка над yt-dlp: меню с цифрами вместо длинных команд. Работает локально, без сайтов-посредников и рекламы. Куки из браузера (по умолчанию Firefox), лимит скорости, смена языка (`4` → `9`). Если загрузка не идёт, обнови yt-dlp (пункт `8`). Без обхода DRM.
+
+</details>
+
+## License
+
+MIT
+
+<img width="498" height="374" alt="Discipline-СЖАТОО" src="https://github.com/user-attachments/assets/cf11e542-3d25-4dc9-b4df-f3405a6e109b" />
